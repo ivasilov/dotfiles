@@ -38,3 +38,7 @@ set smartcase                   " ... unless they contain at least one capital l
 set noswapfile
 set nobackup
 set nowb
+
+if has('gui_running')
+  set guifont=Monaco:h12
+endif
