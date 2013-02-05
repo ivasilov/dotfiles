@@ -1,8 +1,10 @@
-if has("autocmd")
-  filetype on
-  filetype indent on
-  filetype plugin on
-endif
+"" Needed for Vundle
+filetype on
+set nocompatible                " choose no compatibility with legacy vi
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 
@@ -10,10 +12,10 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 if has('win32')
   set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif has('macunix')
-  set guifont=Menlo\ 12
+  set guifont=Monaco:h12
   set shell=/bin/bash
 elseif has('unix')
-  set guifont=DejaVu\ Sans\ Mono\ 10
+  set guifont=DejaVu\ Sans\ Mono:h10
   set shell=/bin/bash
 endif
 
@@ -44,7 +46,7 @@ syntax on
 set background=dark
 colorscheme solarized
 
-set nocompatible                " choose no compatibility with legacy vi
+filetype plugin indent on
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 
