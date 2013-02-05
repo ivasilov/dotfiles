@@ -3,10 +3,29 @@ if has("autocmd")
   filetype indent on
   filetype plugin on
 endif
+
+autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+
+" Colors and Fonts
+if has('win32')
+  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
+elseif has('macunix')
+  set guifont=Menlo\ 12
+  set shell=/bin/bash
+elseif has('unix')
+  set guifont=DejaVu\ Sans\ Mono\ 10
+  set shell=/bin/bash
+endif
+
+" Text, tab and indent related
 set number
 set expandtab
 set softtabstop=2
+
+" Autocompile coffescript
 autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
+
+" Autocomplete for popular languages
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -40,12 +59,7 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-" ================ Turn Off Swap Files ==============
-
+" Files, backups and undo
 set noswapfile
 set nobackup
 set nowb
-
-if has('gui_running')
-  set guifont=Monaco:h12
-endif
