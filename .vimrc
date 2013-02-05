@@ -1,5 +1,8 @@
-call pathogen#infect()
-filetype plugin indent on
+if has("autocmd")
+  filetype on
+  filetype indent on
+  filetype plugin on
+endif
 set number
 set expandtab
 set softtabstop=2
@@ -13,14 +16,18 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd VimEnter * NERDTree
 
-syntax enable
+Bundle 'gmarik/vundle'
+
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+    
+syntax on 
 set background=dark
 colorscheme solarized
 
 set nocompatible                " choose no compatibility with legacy vi
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
 set nowrap                      " don't wrap lines
