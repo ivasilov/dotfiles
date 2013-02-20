@@ -15,7 +15,7 @@ elseif has('macunix')
   set guifont=Monaco:h12
   set shell=/bin/bash
 elseif has('unix')
-  set guifont=DejaVu\ Sans\ Mono:h10
+  set guifont=DejaVu\ Sans\ Mono\ 10
   set shell=/bin/bash
 endif
 
