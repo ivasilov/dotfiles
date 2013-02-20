@@ -25,7 +25,7 @@ set expandtab
 set softtabstop=2
 
 " Autocompile coffescript
-autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
+" autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
 
 " Autocomplete for popular languages
 autocmd FileType python set omnifunc=pythoncomplete#Complete
