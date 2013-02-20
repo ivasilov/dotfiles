@@ -1,5 +1,5 @@
 "" Needed for Vundle
-filetype on
+filetype off
 set nocompatible                " choose no compatibility with legacy vi
 
 set rtp+=~/.vim/bundle/vundle/
@@ -41,7 +41,11 @@ Bundle 'gmarik/vundle'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Syntastic'
+
     
+
 syntax on 
 set background=dark
 colorscheme solarized
@@ -65,3 +69,8 @@ set smartcase                   " ... unless they contain at least one capital l
 set noswapfile
 set nobackup
 set nowb
+
+" Specific settings to Syntastic
+let g:syntastic_check_on_open= 1        "do syntax checks when buffers are first loaded and saving
+let g:syntastic_enable_highlighting = 1 "enable error highlighting
+
